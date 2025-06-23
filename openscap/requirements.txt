@@ -1,4 +1,8 @@
-python-openscap
-lxml
-requests
-subprocess32
+# OpenSCAP 테스트에 필요한 Python 패키지들
+# 주의: python-openscap은 시스템 패키지로 설치해야 합니다!
+
+lxml>=4.6.0
+requests>=2.25.0
+
+# 선택적 패키지들 (OpenSCAP 없이도 기본 기능 동작)
+# subprocess32  # Python 3.3+ 에서는 기본 subprocess 사용

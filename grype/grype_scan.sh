@@ -10,7 +10,7 @@ grype version
 
 # /image 디렉토리에 있는 tar 파일 스캔
 echo "[+] Scanning local tar image: /image/python_3.11.tar"
-grype tar:/image/python_3.11.tar -o table > scan_external.txt
+grype docker-archive:/image/python_3.11.tar -o table > scan_external.txt
 
 # 결과 출력
 echo -e "\n=== Scan Result ==="

@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Grype 보안 스캐너 Python 스크립트
-Docker 이미지의 취약점을 스캔하고 결과를 분석합니다.
-"""
-
 import subprocess
 import json
 import logging

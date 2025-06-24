@@ -2,9 +2,13 @@
 set -e
 
 echo "[+] Installing Trivy..."
-apt-get update && apt-get install -y wget
-wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_0.50.1_Linux-64bit.deb
-dpkg -i trivy_0.50.1_Linux-64bit.deb
+apt-get update && apt-get install -y wget curl
+
+# 공식 install.sh 사용 (버전 명시 가능)
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | bash -s -- -b /usr/local/bin
+
+echo "[+] Checking Trivy version..."
+trivy --version
 
 echo "[+] Scanning Docker image: python:3.11"
 trivy image --severity HIGH,CRITICAL --format table -o result_image.txt python:3.11
